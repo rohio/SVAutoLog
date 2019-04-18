@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#F0E68C</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FFD700</color>
+  <!-- Distinctive & Unexpected -->
+  <color name="turquoise">#52908b</color>
+  <color name="deep_gray">#444444</color>
+  <color name="cool_gray">#e5d2ca</color>
+  <color name="silver">#C0C0C0</color>
+  <color name="chocolate">#D2691E</color>
+  <color name="white">#ffffff</color>
+  <color name="light_green">#4DB6AC</color>
+    <color name="cornsilk">#FFF8DC</color>
+    <color name="palegoldenrod">#EEE8AA</color>
+</resources>

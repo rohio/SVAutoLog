@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--android:background="@color/turquoise">-->
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/my_class_pie_chart"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pie_chart_height"
+            android:layout_weight="5"
+            android:layout_margin="@dimen/chart_margin" />
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/opponent_class_pie_chart"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/pie_chart_height"
+            android:layout_weight="5"
+            android:layout_margin="@dimen/chart_margin" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/win_rate_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/win_rate" />
+
+            <TextView
+                android:id="@+id/win_rate_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/turn_rate_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/first_rate" />
+
+            <TextView
+                android:id="@+id/turn_rate_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/card_inf_open_toggle"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_green"
+                android:text="@string/delete"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/log_list"
+        android:name="com.example.shadowlogauto.LogListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".LogListFragment"
+        tools:listitem="@layout/fragment_log"/>
+
+</LinearLayout>

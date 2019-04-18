@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistrationFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="false">
+
+        <LinearLayout
+            android:id="@+id/touch_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/my_class_regist_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/elf_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_elf"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/royal_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_royal"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/witch_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_witch"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/dragon_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_dragon"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/necromancer_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_necromancer"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/vampire_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_vampire"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/bishop_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_bishop"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/nemesis_my_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_nemesis"
+                    android:button="@null"
+                    android:text="@null" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/myDeckText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/my_deck"
+                android:inputType="textPersonName" />
+
+            <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/choiceButton"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/regist_fragment_button_height"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/chocolate"
+                    android:text="@string/choice_picture"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/takePicture"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/regist_fragment_button_height"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/chocolate"
+                    android:text="@string/take_picture"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/inputView"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/input_image_height"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="3"
+                    android:contentDescription="@string/app_name" />
+
+                <RadioGroup
+                    android:id="@+id/turn_regist_radio_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/first_regist"
+                        android:layout_width="@dimen/turn_width"
+                        android:layout_height="@dimen/turn_height"
+                        android:layout_marginBottom="@dimen/turn_margin"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_first"
+                        android:button="@null"
+                        android:checked="false"
+                        android:text="@null" />
+
+                    <RadioButton
+                        android:id="@+id/second_regist"
+                        android:layout_width="@dimen/turn_width"
+                        android:layout_height="@dimen/turn_height"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_second"
+                        android:button="@null"
+                        android:checked="false"
+                        android:text="@null" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="97dp"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/cardView1"-->
+            <!--android:layout_width="130dp"-->
+            <!--android:layout_height="96dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:contentDescription="@string/app_name" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/cardView2"-->
+            <!--android:layout_width="129dp"-->
+            <!--android:layout_height="96dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:contentDescription="@string/app_name" />-->
+
+            <!--<ImageView-->
+            <!--android:id="@+id/cardView3"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="96dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:contentDescription="@string/app_name" />-->
+
+            <!--</LinearLayout>-->
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/card_name_regist1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/card_name_regist2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/card_name_regist3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/turn_toggle_height"
+                android:orientation="horizontal">
+
+                <ToggleButton
+                    android:id="@+id/card_mulligan_toggle1"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/light_green"
+                    android:textColor="@color/white"
+                    android:textOff="@string/change"
+                    android:textOn="@string/keep"
+                    android:visibility="gone" />
+
+                <ToggleButton
+                    android:id="@+id/card_mulligan_toggle2"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/light_green"
+                    android:textColor="@color/white"
+                    android:textOff="@string/change"
+                    android:textOn="@string/keep"
+                    android:visibility="gone" />
+
+                <ToggleButton
+                    android:id="@+id/card_mulligan_toggle3"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/light_green"
+                    android:textColor="@color/white"
+                    android:textOff="@string/change"
+                    android:textOn="@string/keep"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/opponent_class_regist_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/elf_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_elf"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/royal_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_royal"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/witch_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_witch"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/dragon_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_dragon"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/necromancer_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_necromancer"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/vampire_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_vampire"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/bishop_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_bishop"
+                    android:button="@null"
+                    android:text="@null" />
+
+                <RadioButton
+                    android:id="@+id/nemesis_opponent_regist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_nemesis"
+                    android:button="@null"
+                    android:text="@null" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/opponentDeckText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/opponent_deck"
+                android:inputType="textPersonName"
+                android:visibility="gone" />
+
+            <RadioGroup
+                android:id="@+id/resultButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/resultWin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/result_win" />
+
+                <RadioButton
+                    android:id="@+id/resultLose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/result_lose" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/save_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/regist_fragment_button_height"
+                android:backgroundTint="@color/chocolate"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

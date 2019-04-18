@@ -1,0 +1,66 @@
+<resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="app_name">Shadowverse Auto Log</string>
+    <string name="title_log_list">Log List</string>
+    <string name="title_registration">Registration</string>
+    <string name="title_setting">Setting</string>
+    <string name="take_picture">写真を撮る</string>
+    <string name="choice_picture">写真を選ぶ</string>
+    <string name="result_win">Win</string>
+    <string name="result_lose">Lose</string>
+    <string name="save">Save</string>
+    <string name="my_class">自分のクラス</string>
+    <string name="opponent_class">相手のクラス</string>
+    <string name="result">結果</string>
+    <string name="turn">先攻/後攻</string>
+    <string name="first_turn">先攻</string>
+    <string name="second_turn">後攻</string>
+    <string name="card_name1">カード名 1</string>
+    <string name="card_name2">カード名 2</string>
+    <string name="card_name3">カード名 3</string>
+    <string name="mulligan">マリガン</string>
+    <string name="keep">Keep</string>
+    <string name="change">Change</string>
+    <string name="search">Search</string>
+    <string name="win_rate">勝率</string>
+    <string name="first_rate">先攻率</string>
+    <string name="hint_card1">カード名1から入力してください</string>
+    <string name="hint_card2">カード名2から入力してください</string>
+    <string name="close">close</string>
+    <string name="open">open</string>
+    <string name="date_range">日時範囲</string>
+    <string name="date_while_range">～</string>
+    <string name="elf">E</string>
+    <string name="royal">R</string>
+    <string name="witch">W</string>
+    <string name="dragon">D</string>
+    <string name="necromancer">Nc</string>
+    <string name="vampire">V</string>
+    <string name="bishop">B</string>
+    <string name="nemesis">Nm</string>
+    <string name="versus">VS</string>
+    <string name="delete">Delete</string>
+    <string name="visible">表示</string>
+    <string name="invisible">非表示</string>
+    <string name="sv_intent">Shadowverse起動ボタン</string>
+
+    <string name="neck">首回り</string>
+    <string name="sleeve">そで丈</string>
+    <string name="waist">胴回り</string>
+    <string name="inside_leg">股下</string>
+    <string name="car_number">車のナンバー</string>
+    <string name="phone_number">携帯番号</string>
+
+    <string name="tmp">tmp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_deck">自分のデッキ</string>
+    <string name="opponent_deck">相手のデッキ</string>
+    <string name="unspecified">指定なし</string>
+    <string name="delete_data">データ削除画面へ</string>
+    <string name="log_list_card_visibility">ログ画面のカード情報初期表示</string>
+
+</resources>
