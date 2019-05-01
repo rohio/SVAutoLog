@@ -94,11 +94,11 @@ class LogSearchFragment : Fragment() {
         mEndDate = view.findViewById(R.id.button_end_date_search) as Button
 
 //        EditTextViewで入力候補を表示するために、テキストファイルを読み込む際に使用するStream、BufferdReader
-        var labelInputSrream : InputStream? = null
-        var labelBufferdReader : BufferedReader? = null
+        var labelInputStream : InputStream? = null
+        var labelBufferedReader : BufferedReader? = null
 
         /*        日付を入力する時に使用するinnerクラス
-                  DiarogFragmentで日付を入力できるカレンダーを表示する  */
+                  DialogFragmentで日付を入力できるカレンダーを表示する  */
         class DateDialogFragment(val button: Button) : DialogFragment() {
             override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
                 val calendar = Calendar.getInstance()
@@ -107,49 +107,42 @@ class LogSearchFragment : Fragment() {
 //                        Lollipop の場合は Holo テーマのダイアログにする
 //                        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP) AlertDialog.THEME_HOLO_LIGHT else 
                         theme,
-/*                        DiarogFragmentで日付を選択し、OKを押したときの処理 */
+/*                        DialogFragmentで日付を選択し、OKを押したときの処理 */
                         DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
                             val inputDate = Calendar.getInstance()
                             inputDate.set(year, month, dayOfMonth)
                             val dfInputeDate = SimpleDateFormat("yyyy-MM-dd", Locale.US)
                             val strInputDate = dfInputeDate.format(inputDate.time)
-//                            DiarogFragmentを呼び出したボタンのテキストに日付をセット
+//                            DialogFragmentを呼び出したボタンのテキストに日付をセット
                             button.text = strInputDate
                         },
                         calendar.get(Calendar.YEAR),
                         calendar.get(Calendar.MONTH),
                         calendar.get(Calendar.DAY_OF_MONTH))
                         .also {
-                            /*  選択可能な年月日の上限を指定 */
-                            if (button === mBeginDate){
-                                /* 終了日付が指定されている場合、開始日付は終了日付より後を選べないようにする */
-                                if (mEndDate.text != "指定なし"){
-                                    val maxDate = Calendar.getInstance()
-                                    val dfMaxDate = SimpleDateFormat("yyyy-MM-dd", Locale.JAPAN)
-                                    val endInputDate = dfMaxDate.parse(mEndDate.text.toString())
-                                    maxDate.time = endInputDate
-                                    it.datePicker.maxDate = maxDate.timeInMillis
-                                } else {
-                                    it.datePicker.maxDate = calendar.timeInMillis
-                                }
+                            /* 選択可能な年月日の上限を指定
+                               終了日付が指定されている場合、開始日付は終了日付を上限にする */
+                            if (button === mBeginDate && mEndDate.text != "指定なし"){
+                                val maxDate = Calendar.getInstance()
+                                val dfMaxDate = SimpleDateFormat("yyyy-MM-dd", Locale.JAPAN)
+                                val endInputDate = dfMaxDate.parse(mEndDate.text.toString())
+                                maxDate.time = endInputDate
+                                it.datePicker.maxDate = maxDate.timeInMillis
                             } else {
+//                                終了日付が指定されていない場合、現在日付を上限にする
                                 it.datePicker.maxDate = calendar.timeInMillis
                             }
 
                             /*  選択可能な年月日の下限を指定 */
                             val minDate = Calendar.getInstance()
-                            if (button === mEndDate){
-                                /* 開始日付が指定されている場合、終了日付は開始日付より前を選べないようにする */
-                                if (mBeginDate.text != "指定なし"){
-                                    val dfMinDate = SimpleDateFormat("yyyy-MM-dd", Locale.JAPAN)
-                                    val beginInputDate = dfMinDate.parse(mBeginDate.text.toString())
-                                    minDate.time = beginInputDate
-                                    it.datePicker.minDate = minDate.timeInMillis
-                                } else {
-                                    minDate.set(2019, 0, 1)
-                                    it.datePicker.minDate = minDate.timeInMillis
-                                }
+                            if (button === mEndDate && mBeginDate.text != "指定なし"){
+                            /* 開始日付が指定されている場合、終了日付は開始日付を下限にする */
+                                val dfMinDate = SimpleDateFormat("yyyy-MM-dd", Locale.JAPAN)
+                                val beginInputDate = dfMinDate.parse(mBeginDate.text.toString())
+                                minDate.time = beginInputDate
+                                it.datePicker.minDate = minDate.timeInMillis
                             } else {
+//                                開始日付が指定されていない場合、終了日付は2019/1/1を下限にする
                                 minDate.set(2019, 0, 1)
                                 it.datePicker.minDate = minDate.timeInMillis
                             }
@@ -158,7 +151,7 @@ class LogSearchFragment : Fragment() {
                         }
             }
 
-            /* DiarogFragmentでcancelを押した際の処理 */
+            /* DialogFragmentでcancelを押した際の処理 */
             override fun onCancel(dialog: DialogInterface?) {
                 super.onCancel(dialog)
                 button.text = "指定なし"
@@ -403,15 +396,15 @@ class LogSearchFragment : Fragment() {
         }
 
         try {
-            labelInputSrream = activity!!.assets.open("input.txt")
-            labelBufferdReader = BufferedReader(InputStreamReader(labelInputSrream))
+            labelInputStream = activity!!.assets.open("input.txt")
+            labelBufferedReader = BufferedReader(InputStreamReader(labelInputStream))
             val cardNameAutoCompleteList = mutableListOf<String>()
-            var strTmp = labelBufferdReader.readLine()
+            var strTmp = labelBufferedReader.readLine()
 
 //            入力候補用のテキストファイルを1行ずつ読み込み、Listに格納
             do {
                 cardNameAutoCompleteList.add(strTmp)
-                strTmp = labelBufferdReader.readLine()
+                strTmp = labelBufferedReader.readLine()
             } while(strTmp != null)
 
 //            EditTextViewに入力候補を表示するAdapterをセット
@@ -420,8 +413,8 @@ class LogSearchFragment : Fragment() {
             mEditCardName2.setAdapter(arrayAdapter)
             mEditCardName3.setAdapter(arrayAdapter)
         } finally {
-            labelInputSrream?.close()
-            labelBufferdReader?.close()
+            labelInputStream?.close()
+            labelBufferedReader?.close()
         }
 
         return view
